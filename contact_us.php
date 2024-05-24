@@ -15,15 +15,25 @@
 include 'head.php'; ?>
 <?php
 if(isset($_POST["send"])){
-  $name=$_POST['fullname'];
-$number=$_POST['contactno'];
-$email=$_POST['email'];
-$message=$_POST['message'];
-$conn=mysqli_connect("localhost","root","","blood_donation") or die("Connection error");
-$sql= "insert into contact_query (query_name,query_mail,query_number,query_message) values('{$name}','{$number}','{$email}','{$message}')";
-$result=mysqli_query($conn,$sql) or die("query unsuccessful.");
+  $name = $_POST['fullname'];
+  $number = $_POST['contactno'];
+  $email = $_POST['email'];
+  $message = $_POST['message'];
+  $conn = mysqli_connect("localhost", "root", "", "blood_donation") or die("Connection error");
+  
+  // Insert into contact_query table
+  $sql = "INSERT INTO contact_query (query_name, query_mail, query_number, query_message, query_status) 
+          VALUES ('{$name}', '{$email}', '{$number}', '{$message}', 2)";
+  $result = mysqli_query($conn, $sql) or die("Query unsuccessful.");
+
+  // Insert into pending_query table
+  $sql_pending = "INSERT INTO pending_queries (query_name, query_mail, query_number, query_message) 
+                  VALUES ('{$name}', '{$email}', '{$number}', '{$message}')";
+  $result_pending = mysqli_query($conn, $sql_pending) or die("Pending query insertion unsuccessful.");
+
   echo '<div class="alert alert-success alert_dismissible"><b><button type="button" class="close" data-dismiss="alert">&times;</button></b><b>Query Sent, We will contact you shortly. </b></div>';
-}?>
+}
+?>
 
 <div id="page-container" style="margin-top:50px; position: relative;min-height: 84vh;">
   <div class="container">

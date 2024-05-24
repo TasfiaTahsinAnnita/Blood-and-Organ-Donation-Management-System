@@ -206,3 +206,27 @@ CREATE TABLE organ_donations (
 -- Insert some dummy data (optional)
 INSERT INTO organ_donations (donor_name, donor_blood_group, donatable_organ, donation_reason, contact_number, donor_address, amount_demanded)
 VALUES ('Samura', 'B+','Kidney', 'For Family', '1234567890', 'Jatrabari', 50000.00);
+
+-- Use existing database
+USE blood_donation;
+
+-- Create the pending_queries table
+CREATE TABLE pending_queries (
+    query_id INT AUTO_INCREMENT NOT NULL,
+    query_name VARCHAR(100) NOT NULL,
+    query_mail VARCHAR(120) NOT NULL,
+    query_number CHAR(11) NOT NULL,
+    query_message LONGTEXT NOT NULL,
+    query_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY(query_id)
+);
+
+-- Copy pending queries from contact_query to pending_queries
+INSERT INTO pending_queries (query_name, query_mail, query_number, query_message)
+SELECT query_name, query_mail, query_number, query_message
+FROM contact_query
+WHERE query_status IS NULL OR query_status = 2;
+
+-- Ensure no pending queries remain in contact_query table
+DELETE FROM contact_query WHERE query_status IS NULL OR query_status = 2;
+

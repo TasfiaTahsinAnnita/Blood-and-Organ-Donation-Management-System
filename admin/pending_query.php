@@ -41,7 +41,7 @@ include 'conn.php';
 ?>
 </div>
 <div id="sidebar">
-<?php $active="query"; include 'sidebar.php'; ?>
+<?php $active="pendingquery"; include 'sidebar.php'; ?>
 
 </div>
 <div id="content" >

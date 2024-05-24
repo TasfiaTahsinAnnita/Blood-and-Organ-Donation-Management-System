@@ -78,8 +78,8 @@ border-radius:10px;
   <a href="add_organ_donor.php"   <?php if($active=='addorgan') echo "class='act'"; ?>><span class="glyphicon glyphicon-pencil"></span>&nbsp&nbspAdd Organ Donor</a>
   <a href="donor_list.php"   <?php if($active=='list') echo "class='act'"; ?>><span class="glyphicon glyphicon-list-alt"></span>&nbsp&nbsp Blood Donor List</a>
   <a href="organ_donor_list.php"   <?php if($active=='organlist') echo "class='act'"; ?>><span class="glyphicon glyphicon-list-alt"></span>&nbsp&nbsp Organ Donor List</a>
-  <a href="query.php"   <?php if($active=='query') echo "class='act'"; ?>><span class="glyphicon glyphicon-check"></span>&nbsp&nbspCheck Contactus Query</a>
-
+  <a href="query.php"   <?php if($active=='query') echo "class='act'"; ?>><span class="glyphicon glyphicon-check"></span>&nbsp&nbspCheck All Users Query</a>
+  <a href="pending_query.php"   <?php if($active=='endingquery') echo "class='act'"; ?>><span class="glyphicon glyphicon-check"></span>&nbsp&nbspCheck Pending Query</a>
     <a href="pages.php"   <?php if($active=='pages') echo "class='act'"; ?>><span class="glyphicon glyphicon-edit"></span>&nbsp&nbspManage Pages</a>
   <a href="update_contact.php"   <?php if($active=='contact') echo "class='act'"; ?>><span class="glyphicon glyphicon-edit"></span>&nbsp&nbspUpdate Contact Info</a>
 
