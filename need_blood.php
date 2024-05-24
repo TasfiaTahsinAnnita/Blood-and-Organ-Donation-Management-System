@@ -65,7 +65,7 @@
 
       <div class="col-lg-4 col-sm-6 portfolio-item" ><br>
       <div class="card" style="width:300px">
-          <img class="card-img-top" src="image\blood_drop_logo.jpg" alt="Card image" style="width:100%;height:300px">
+          <img class="card-img-top" src="image\donor.jpg" alt="Card image" style="width:100%;height:300px">
           <div class="card-body">
             <h3 class="card-title"><?php echo $row['donor_name']; ?></h3>
             <p class="card-text">
