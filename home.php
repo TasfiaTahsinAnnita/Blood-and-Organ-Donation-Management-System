@@ -29,13 +29,13 @@
             <div id="content-wrap" style="padding-bottom:75px;">
                 <div id="demo" class="carousel slide" data-ride="carousel">
 
-                    <!-- Indicators -->
+                    
                     <ul class="carousel-indicators">
                         <li data-target="#demo" data-slide-to="0" class="active"></li>
                         <li data-target="#demo" data-slide-to="1"></li>
                     </ul>
 
-                    <!-- The slideshow -->
+                    
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <img src="image\home.jpg" alt="image\home.jpg" width="100%" height="500">
@@ -47,7 +47,7 @@
 
                     </div>
 
-                    <!-- Left and right controls -->
+                    
                     <a class="carousel-control-prev" href="#demo" data-slide="prev">
                         <span class="carousel-control-prev-icon"></span>
                     </a>
@@ -180,9 +180,7 @@
                 </div>
 
                 <br>
-                <!-- /.row -->
-
-                <!-- Features Section -->
+               
                 <div class="row">
                     <div class="col-lg-6">
                         <h2>BLOOD GROUPS</h2>
@@ -205,11 +203,9 @@
                         <img class="img-fluid rounded" src="image\3.jpg" alt="">
                     </div>
                 </div>
-                <!-- /.row -->
 
                 <hr>
 
-                <!-- Call to Action Section -->
                 <div class="row mb-4">
                     <div class="col-md-8">
                         <h4>UNIVERSAL DONORS AND RECIPIENTS</h4>

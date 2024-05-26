@@ -19,17 +19,12 @@ if(isset($_POST["send"])){
   $number = $_POST['contactno'];
   $email = $_POST['email'];
   $message = $_POST['message'];
-  $conn = mysqli_connect("localhost", "root", "", "blood_donation") or die("Connection error");
+  $conn = mysqli_connect("localhost", "root", "", "Blood_Organ_donation") or die("Connection error");
   
-  // Insert into contact_query table
   $sql = "INSERT INTO contact_query (query_name, query_mail, query_number, query_message, query_status) 
           VALUES ('{$name}', '{$email}', '{$number}', '{$message}', 2)";
   $result = mysqli_query($conn, $sql) or die("Query unsuccessful.");
 
-  // Insert into pending_query table
-  $sql_pending = "INSERT INTO pending_queries (query_name, query_mail, query_number, query_message) 
-                  VALUES ('{$name}', '{$email}', '{$number}', '{$message}')";
-  $result_pending = mysqli_query($conn, $sql_pending) or die("Pending query insertion unsuccessful.");
 
   echo '<div class="alert alert-success alert_dismissible"><b><button type="button" class="close" data-dismiss="alert">&times;</button></b><b>Query Sent, We will contact you shortly. </b></div>';
 }

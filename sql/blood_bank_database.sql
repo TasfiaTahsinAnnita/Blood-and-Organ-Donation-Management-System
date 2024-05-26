@@ -1,7 +1,7 @@
-create database blood_donation; /* creating database*/
-use blood_donation;
+create database Blood_Organ_donation;
+use Blood_Organ_donation;
 
-/*create table donor_details in which all donor information gets stored.*/
+/*blood donor er table*/
 create table donor_details(
 donor_id int auto_increment NOT NULL,
 donor_name varchar(50) NOT NULL,
@@ -13,7 +13,7 @@ donor_blood varchar(10) NOT NULL,
 donor_address varchar(100) NOT NULL,
 Primary key(donor_id)
 );
-/*create table admin_info in which all admin information gets stored.*/
+/*admin er login details*/
 create table admin_info(
 admin_id int(10) NOT NULL UNIQUE AUTO_INCREMENT,
 admin_name varchar(50) NOT NULL,
@@ -22,23 +22,22 @@ admin_password varchar(50) NOT NULL,
 Primary key(admin_id)
 );
 
-/*  insert admin data into admin_info table*/
+
 insert into admin_info(admin_name,admin_username,admin_password)
 values("Annita","annitatahsin",123);
 
-/*create table blood in which all blood group is stored.*/
+
 create table blood(
 blood_id int auto_increment Not Null,
 blood_group varchar(10) NOT NULL,
 primary key(blood_id)
 );
 
-/* insert all blood groups*/
 insert into blood(blood_group)
 values("B+"),("B-"),("A+"),("O+"),("O-"),("A-"),("AB+"),("AB-");
 
 
-/*create table pages in which all pages information gets stored.*/
+/*shb page er likha info gula store krbo*/
 create table pages(
 page_id int NOT NULL auto_increment UNIQUE,
 page_name varchar(255) NOT NULL,
@@ -48,7 +47,7 @@ page_data longtext NOT NULL
 ALTER TABLE pages
 MODIFY COLUMN page_type varchar(50) UNIQUE;
 
-/*create table contact_info in which your site contact information is stored.*/
+/*BO donation er contacts*/
 create table contact_info(
 contact_id int auto_increment Not Null,
 contact_address varchar(100) NOT NULL,
@@ -155,7 +154,7 @@ Type O individuals are often called "universal donors" since their blood can be 
 
 </span>');
     
-    /*create table contact_query in which all querier inforamation gets stored.*/
+/*total koyta query ase*/
 create table contact_query(
 query_id int auto_increment Not Null,
 query_name varchar(100) NOT NULL,
@@ -174,23 +173,8 @@ insert into contact_query (query_name,query_mail,query_number,query_message) val
 ("Jafa","Jafa@gmail.com","12345678910","I need eyes.");
 
 update contact_query set query_status="1" where query_id="1";
-
-/*create table query_stat in which query status is stored.*/
-CREATE TABLE query_stat(
-  id INT NOT NULL Unique,
- query_type VARCHAR(45) NOT NULL,
-  PRIMARY KEY (id)
-  );
   
-  
-  insert into query_stat(id,query_type)
-  values('1',"Read"),
-  ('2',"Pending");
-  
--- Use existing database
-USE blood_donation;
-
--- Create table for organ donations
+/*organ donor er table*/
 CREATE TABLE organ_donations (
     donation_id INT AUTO_INCREMENT NOT NULL,
     donor_name VARCHAR(50) NOT NULL,
@@ -203,30 +187,12 @@ CREATE TABLE organ_donations (
     PRIMARY KEY(donation_id)
 );
 
--- Insert some dummy data (optional)
 INSERT INTO organ_donations (donor_name, donor_blood_group, donatable_organ, donation_reason, contact_number, donor_address, amount_demanded)
 VALUES ('Samura', 'B+','Kidney', 'For Family', '1234567890', 'Jatrabari', 50000.00);
 
--- Use existing database
-USE blood_donation;
-
--- Create the pending_queries table
-CREATE TABLE pending_queries (
-    query_id INT AUTO_INCREMENT NOT NULL,
-    query_name VARCHAR(100) NOT NULL,
-    query_mail VARCHAR(120) NOT NULL,
-    query_number CHAR(11) NOT NULL,
-    query_message LONGTEXT NOT NULL,
-    query_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY(query_id)
-);
-
--- Copy pending queries from contact_query to pending_queries
-INSERT INTO pending_queries (query_name, query_mail, query_number, query_message)
 SELECT query_name, query_mail, query_number, query_message
 FROM contact_query
 WHERE query_status IS NULL OR query_status = 2;
 
--- Ensure no pending queries remain in contact_query table
+/*read hoile delete koira dibo*/
 DELETE FROM contact_query WHERE query_status IS NULL OR query_status = 2;
-

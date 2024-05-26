@@ -84,6 +84,31 @@ include 'sidebar.php'; ?>
 
               </div>
             </div>
+            <div class="col-md-3">
+              <div class="panel panel-default panel-info" style="border-radius:50px;">
+                <div class="panel-body panel-info bk-primary text-light" style="background-color:#d6d9f8; border-radius:50px">
+                  <div class="stat-panel text-center">
+                    <?php
+                      $sql =" SELECT * from organ_donations ";
+                      $result=mysqli_query($conn,$sql) or die("query failed.");
+                      $row=mysqli_num_rows($result);
+
+                    ?>
+
+
+                    <div class="stat-panel-number h1"><?php echo $row?></div>
+                    <div class="stat-panel-title text-uppercase">Organ Donors Available </div>
+                    <br>
+                      <button class="btn btn-danger" onclick="window.location.href = 'organ_donor_list.php';">
+                        Full Detail <i class="fa fa-arrow-right"></i>
+                      </button>
+
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
 
             <div class="col-md-3">
               <div class="panel panel-default panel-info" style="border-radius:50px;">

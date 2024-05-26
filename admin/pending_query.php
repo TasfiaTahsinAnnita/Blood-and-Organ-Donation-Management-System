@@ -109,6 +109,33 @@ include 'conn.php';
                     <td id="he" style="width:100px">
                     <a style="background-color:aqua" href='delete_query.php?id=<?php echo $row['query_id']; ?>'> Delete </a>
                 </td>
+                <script>
+    function deleteQuery(queryId) {
+        if (confirm("Are you sure you want to delete this query?")) {
+            // Construct the URL for the deletion action
+            var url = "delete_query.php?id=" + queryId;
+            
+            // Send a request to the constructed URL
+            fetch(url, {
+                method: 'GET'
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Handle successful deletion if needed
+                    console.log('Query deleted successfully');
+                    // Optionally reload the page
+                    location.reload();
+                } else {
+                    // Handle errors if necessary
+                    console.error('Error deleting query');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    }
+</script>
               </tr>
             <?php } ?>
           </tbody>

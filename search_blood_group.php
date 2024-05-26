@@ -1,7 +1,7 @@
 <?php
 
 $bg=$_POST['blood'];
-$conn=mysqli_connect("localhost","root","","blood_donation") or die("Connection error");
+$conn=mysqli_connect("localhost","root","","Blood_Organ_donation") or die("Connection error");
 $sql= "select * from donor_details where donor_blood='{$bg}' order by rand() limit 5";
 $result=mysqli_query($conn,$sql) or die("query unsuccessful.");
   if(mysqli_num_rows($result)>0)   {

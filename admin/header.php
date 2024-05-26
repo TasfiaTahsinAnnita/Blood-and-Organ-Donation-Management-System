@@ -38,7 +38,6 @@
     background-color:#E5E8E8 ;
     border-radius: 5px;
   }
-}
   </style>
 </head>
 <body>
