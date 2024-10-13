@@ -26,9 +26,11 @@ The Blood and Organ Donation Management System is a web-based application design
 ## Installation Instructions
 1. Clone the repository:
   <br>
+  
   ``bash
 git clone https://github.com/your-username/Blood-and-Organ-Donation-Management-System.git
 ``
+
 2. Move the files to your web server's root directory (e.g., htdocs in XAMPP).
 3. Start Apache and MySQL using XAMPP or LAMP.
 4. Navigate to  ``bash
