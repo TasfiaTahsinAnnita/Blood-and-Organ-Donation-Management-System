@@ -25,7 +25,7 @@ The Blood and Organ Donation Management System is a web-based application design
 
 ## Installation Instructions
 1. Clone the repository:
-  <br>
+
   ``bash
 git clone https://github.com/your-username/Blood-and-Organ-Donation-Management-System.git
 ``
