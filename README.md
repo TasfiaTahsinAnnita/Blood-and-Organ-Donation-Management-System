@@ -36,3 +36,13 @@ git clone https://github.com/your-username/Blood-and-Organ-Donation-Management-S
    http://localhost/
    ``
    to access the system.
+   
+##Database Setup
+1. Open phpMyAdmin and create a new database (e.g., blood_organ_donation).
+2. Import the SQL file located in the sql folder:
+   - Go to Import and select the blood_organ_donation.sql file.
+3. Update the database connection in conn.php:
+
+   ``bash
+   $conn = mysqli_connect('localhost', 'root', '', 'blood_organ_donation');
+   ``
