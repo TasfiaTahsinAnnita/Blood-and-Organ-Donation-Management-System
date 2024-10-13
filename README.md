@@ -50,18 +50,30 @@ git clone https://github.com/your-username/Blood-and-Organ-Donation-Management-S
 - Homepage: Access the main features like donating blood, searching for donors, and learning about the benefits of donation.
 - Admin Panel: Manage the system from the admin dashboard, available after logging in as an administrator.
 ## File Structure
-``bash 
+
 Blood-and-Organ-Donation-Management-System/
+<br>
 │
+<br>
 ├── admin/                   # Admin dashboard files
+<br>
 ├── image/                   # Images used in the website
+<br>
 ├── sql/                     # Database SQL file
+<br>
 ├── about_us.php             # About Us page
+<br>
 ├── contact_us.php           # Contact Us page
+<br>
 ├── donate_blood.php         # Blood donation form
+<br>
 ├── donate_organ.php         # Organ donation form
+<br>
 ├── need_blood.php           # Blood request form
+<br>
 ├── search_blood_group.php   # Search donors by blood group
+<br>
 ├── home.php                 # Homepage
+<br>
 └── conn.php                 # Database connection
-``
+
